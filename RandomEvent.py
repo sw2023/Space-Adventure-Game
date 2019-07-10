@@ -295,12 +295,60 @@ def object_found():
     elif objectType == 2: # if object is an upgrade
 
         if upgradeTier >= 1 and upgradeTier <= 19: # tier 1
+
             if upgradeType == 1: # shield upgrade module
-                pass
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to upgrade its shields.")
+                sleep(2.75)
+
+                if Inventory.hullShield > 6 and Inventory.hullShield < 7:
+                    temp = Inventory.hullShield
+                    Inventory.hullShield = 7
+                    print("+", (Inventory.hullShield-temp), "Shield!")
+                elif Inventory.hullShield <= 6:
+                    Inventory.hullShield += 1
+                    print("+1 Shield!")
+                else:
+                    print("Your shield is already maxed out (7 Shield), so you can't get any more.")
+
+                sleep(6)
+                clear()
             elif upgradeType == 2: # hull reinforcement module
-                pass
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to")
+                print("repair and reinforce its hull.")
+                sleep(2.75)
+
+                if Inventory.hp > 970 and Inventory.hp < 1000:
+                    temp = Inventory.hp
+                    Inventory.hp = 1000
+                    print("+", (Inventory.hp-temp), " HP!")
+                elif Inventory.hp <= 970:
+                    Inventory.hp += 30
+                    print("+30 HP!")
+                else:
+                    print("Your HP is already maxed (1000 HP), so you can't get any more.")
+                
+                sleep(6)
+                clear()
             else: # hp regen module
-                pass
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to")
+                print("boost the probe's regeneration.")
+                sleep(2.75)
+
+                if Inventory.healthRegen > 29 and Inventory.healthRegen < 30:
+                    temp = Inventory.healthRegen
+                    Inventory.healthRegen = 30
+                    print("+", (Inventory.healthRegen-temp), "Regen!")
+                elif Inventory.healthRegen <=29:
+                    Inventory.healthRegen += 1
+                    print("+1 Regen!")
+                else:
+                    print("HP Regen is already maxed out (30), so you can't get any more.")
             
         elif upgradeTier >= 20 and upgradeTier <= 31: # tier 2
             if upgradeType == 1: # shield upgrade module
