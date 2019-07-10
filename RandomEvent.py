@@ -263,6 +263,7 @@ def object_found():
                 pass
             else:
                 pass
+
         elif weaponTier >= 20 and weaponTier <= 34:
             if weaponType == 1:
                 pass
@@ -270,6 +271,7 @@ def object_found():
                 pass
             else:
                 pass
+
         elif weaponTier >= 35 and weaponTier <= 45:
             if weaponType == 1:
                 pass
@@ -277,6 +279,7 @@ def object_found():
                 pass
             else:
                 pass
+
         elif weaponTier >= 46 and weaponTier <= 51:
             if weaponType == 1:
                 pass
@@ -284,6 +287,7 @@ def object_found():
                 pass
             else:
                 pass
+                
         elif weaponTier <= 52 and weaponTier <= 54:
             if weaponType == 1:
                 pass
