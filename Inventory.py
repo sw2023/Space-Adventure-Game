@@ -8,12 +8,12 @@ copper = 0 # copper is a common material used to upgrade the ship and sometimes 
 platinum = 0 # platinum is an uncommon material used to upgrade the ship and trade
 unobtanium = 0 # unobtanium is an extremely rare metal used to upgrade, reinforce, and add to the ship. Also tradable.
 
-probeHealth = 250 # probe's health that can be added to or subtracted, if health reaches 0, game ends
+hp = 250 # probe's HP that can be added to or subtracted, if HP reaches 0, game ends
 # max hp is 1000 and requires extremely good rng to get it
 hullShield = 0 # max shield is 7
 healthRegen = 10 # hp slowly regens over time, max regen factor is 30
 
-if probeHealth == 0:
+if hp == 0:
     print("The probe is too damaged and can't sustain itself any longer.")
     sleep(10)
     clear()

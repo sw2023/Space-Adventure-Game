@@ -111,21 +111,21 @@ def scan_object(scanObject):
                     sleeper()
 
                     if Inventory.hullShield == 0:
-                        temp = Inventory.probeHealth
-                        Inventory.probeHealth -= 20
-                        print("The probe took ", (temp-Inventory.probeHealth), " damage!")
+                        temp = Inventory.hp
+                        Inventory.hp -= 20
+                        print("The probe took ", (temp-Inventory.hp), " damage!")
                     elif Inventory.hullShield == 1:
-                        temp = Inventory.probeHealth
-                        Inventory.probeHealth -= 15
-                        print("The probe's shields absorb some of the damage, but the probe still takes ", (temp-Inventory.probeHealth), " damage!")
+                        temp = Inventory.hp
+                        Inventory.hp -= 15
+                        print("The probe's shields absorb some of the damage, but the probe still takes ", (temp-Inventory.hp), " damage!")
                     elif Inventory.hullShield == 2:
-                        temp = Inventory.probeHealth
-                        Inventory.probeHealth -= 10
-                        print("The probe's shields absorb some of the damage, but the probe still takes ", (temp-Inventory.probeHealth), " damage!")
+                        temp = Inventory.hp
+                        Inventory.hp -= 10
+                        print("The probe's shields absorb some of the damage, but the probe still takes ", (temp-Inventory.hp), " damage!")
                     elif Inventory.hullShield == 3:
-                        temp = Inventory.probeHealth
-                        Inventory.probeHealth -= 5
-                        print("The probe's shields absorb most of the damage, but the probe still takes ", (temp-Inventory.probeHealth), " damage!")
+                        temp = Inventory.hp
+                        Inventory.hp -= 5
+                        print("The probe's shields absorb most of the damage, but the probe still takes ", (temp-Inventory.hp), " damage!")
                     elif Inventory.hullShield >= 4:
                         print("The probe's shields are strong enough to absorb all of the impact!")
 
@@ -295,11 +295,11 @@ def object_found():
     elif objectType == 2: # if object is an upgrade
 
         if upgradeTier >= 1 and upgradeTier <= 19: # tier 1
-            if upgradeType == 1:
+            if upgradeType == 1: # shield upgrade module
                 pass
-            elif upgradeType == 2:
+            elif upgradeType == 2: # hull reinforcement module
                 pass
-            else:
+            else: # hp regen module
                 pass
             
         elif upgradeTier >= 20 and upgradeTier <= 31: # tier 2
@@ -308,8 +308,17 @@ def object_found():
                 sleep(3.3)
                 print("Upon further analysis, the probe finds that the module can be used to upgrade its shields.")
                 sleep(2.75)
-                Inventory.hullShield += 2
-                print("+2 Shield!")
+
+                if Inventory.hullShield > 5 and Inventory.hullShield < 7:
+                    temp = Inventory.hullShield
+                    Inventory.hullShield = 7
+                    print("+", (Inventory.hullShield-temp), "Shield!")
+                elif Inventory.hullShield <= 5:
+                    Inventory.hullShield += 2
+                    print("+2 Shield!")
+                else:
+                    print("Your shield is already maxed out (7 Shield), so you can't get any more.")
+
                 sleep(6)
                 clear()
             elif upgradeType == 2: # hull reinforcement module
@@ -318,9 +327,36 @@ def object_found():
                 print("Upon further analysis, the probe finds that the module can be used to")
                 print("repair and reinforce its hull.")
                 sleep(2.75)
-            else: # health regen module
-                pass
-        
+
+                if Inventory.hp > 930 and Inventory.hp < 1000:
+                    temp = Inventory.hp
+                    Inventory.hp = 1000
+                    print("+", (Inventory.hp-temp), " HP!")
+                elif Inventory.hp <= 930:
+                    Inventory.hp += 70
+                    print("+70 HP!")
+                else:
+                    print("Your HP is already maxed (1000 HP), so you can't get any more.")
+                
+                sleep(6)
+                clear()
+            else: # hp regen module
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to")
+                print("boost the probe's regeneration.")
+                sleep(2.75)
+
+                if Inventory.healthRegen > 27 and Inventory.healthRegen < 30:
+                    temp = Inventory.healthRegen
+                    Inventory.healthRegen = 30
+                    print("+", (Inventory.healthRegen-temp), "Regen!")
+                elif Inventory.healthRegen <=27:
+                    Inventory.healthRegen += 3
+                    print("+3 Regen!")
+                else:
+                    print("HP Regen is already maxed out (30), so you can't get any more.")
+
         else: # tier 3
             if upgradeType == 1: # shield upgrade module
                 print("The probe finds a module floating in space.")
@@ -334,7 +370,7 @@ def object_found():
                     print("+", (Inventory.hullShield-temp), "Shield!")
                 elif Inventory.hullShield <=4:
                     Inventory.hullShield += 3
-                    print("+100 Shield!")
+                    print("+2 Shield!")
                 else:
                     print("Your shield is already maxed out (7 Shield), so you can't get any more.")
                 
@@ -347,15 +383,15 @@ def object_found():
                 print("repair and reinforce its hull.")
                 sleep(2.75)
 
-                if Inventory.probeHealth > 900 and Inventory.probeHealth < 1000:
-                    temp = Inventory.probeHealth
-                    Inventory.probeHealth = 1000
-                    print("+", (Inventory.probeHealth-temp), " Health!")
-                elif Inventory.probeHealth <= 900:
-                    Inventory.probeHealth += 100
-                    print("+100 Health!")
-                elif Inventory.probeHealth == 1000:
-                    print("Your health is already maxed-out (1000 HP), so you can't get any more.")
+                if Inventory.hp > 900 and Inventory.hp < 1000:
+                    temp = Inventory.hp
+                    Inventory.hp = 1000
+                    print("+", (Inventory.hp-temp), " HP!")
+                elif Inventory.hp <= 900:
+                    Inventory.hp += 100
+                    print("+100 HP!")
+                elif Inventory.hp == 1000:
+                    print("Your HP is already maxed-out (1000 HP), so you can't get any more.")
                 
                 sleep(6)
                 clear()
