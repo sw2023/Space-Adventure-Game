@@ -92,4 +92,20 @@ def part_1_event_2():
     print("There are three possible paths for the probe to take, but all of them are unknown.")
     sleep(4)
     print("The probe could also turn back and head another direction?")
-    pathSelect = input("Which path do you want to take?")
+    pathSelect = input("Which path do you want to take? (1, 2, 3, 4)")
+
+    while pathSelect != 1 or 2 or 3 or 4:
+        if pathSelect == 1 or 2 or 3 or 4:
+            break
+        
+        pathSelect = 0
+        pathSelect = input("Which path do you want to take? (1, 2, 3, 4)")
+
+    if pathSelect == 1:
+        pass
+    elif pathSelect == 2:
+        pass
+    elif pathSelect == 3:
+        pass
+    else:
+        pass
