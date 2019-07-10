@@ -1,7 +1,7 @@
 import random
 import Inventory
-from intro import sleeper
-from clearConsole import clear
+from Intro import sleeper
+from ClearConsole import clear
 from time import sleep
 
 temp = 0 # temp variable

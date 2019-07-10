@@ -1,5 +1,5 @@
 from time import sleep
-from clearConsole import clear
+from ClearConsole import clear
 
 def sleeper(): # got lazy writing "sleep(1.25)", serves no other purpose
     sleep(1.8)
