@@ -229,7 +229,7 @@ def object_found():
     durability = random.randint(500, 5500) # each object will have a full durability of 5500
 
     #variables used to determine what type of upgrade the upgrade module is, what it upgrades, etc.
-    upgradeTier = random.randint(1, 55) # upgrade tier selector
+    upgradeTier = random.randint(1, 36) # upgrade tier selector
     upgradeType = random.randint(1, 3) # 3 types of upgrades: hull reinforcement (reduced damage), healing (if hp is full then increases total hp), weapon tier upgrade
 
     # variables used to determine whether certain materials are in resource bundles or not
@@ -294,7 +294,7 @@ def object_found():
 
     elif objectType == 2: # if object is an upgrade
 
-        if upgradeTier >= 1 and upgradeTier <= 20: # tier 1
+        if upgradeTier >= 1 and upgradeTier <= 19: # tier 1
             if upgradeType == 1:
                 pass
             elif upgradeType == 2:
@@ -302,7 +302,7 @@ def object_found():
             else:
                 pass
             
-        elif upgradeTier >= 21 and upgradeTier <= 50: # tier 2
+        elif upgradeTier >= 20 and upgradeTier <= 31: # tier 2
             if upgradeType == 1: # shield upgrade module
                 print("The probe finds a module floating in space.")
                 sleep(3.3)
