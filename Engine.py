@@ -3,11 +3,8 @@ from clearConsole import clear
 from time import sleep
 import Inventory
 
-# imports that contain the story
-from intro import display_intro, sleeper
-from StoryOne import part_1_event_1, part_1_event_2
-
-display_intro() # pretty self-explanatory, just displays the intro found in intro.py
+def sleeper(): # didn't want to write `sleep(2)`
+    sleep(2)
 
 quitGame = [ord(char) - 96 for char in input('Do you want to continue as the probe? (y/n)').lower()] # converts character input into numbers
 # credit for the above (minor modifications were made): https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python
@@ -42,6 +39,3 @@ if quitGame[0] == 14:
 # if user responds w/ "y", program continues
 elif quitGame[0] == 25:
     pass
-
-# continuing the story
-part_1_event_1()
