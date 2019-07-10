@@ -14,7 +14,7 @@ hullShield = 0 # max shield is 7
 healthRegen = 10 # hp slowly regens over time
 
 if probeHealth == 0:
-    print("The probe has sustained too much damage and can't sustain itself any longer.")
+    print("The probe is too damaged and can't sustain itself any longer.")
     sleep(10)
     clear()
 
