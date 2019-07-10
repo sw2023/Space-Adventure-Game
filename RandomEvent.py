@@ -301,43 +301,65 @@ def object_found():
                 pass
             else:
                 pass
+            
         elif upgradeTier >= 21 and upgradeTier <= 50: # tier 2
-            if upgradeType == 1:
-                pass
-            elif upgradeType == 2:
-                pass
-            else:
-                pass
-        else: # tier 3
-            if upgradeType == 1:
+            if upgradeType == 1: # shield upgrade module
                 print("The probe finds a module floating in space.")
                 sleep(3.3)
                 print("Upon further analysis, the probe finds that the module can be used to upgrade its shields.")
                 sleep(2.75)
-                Inventory.hullShield += 3
-                print("+3 Shield!")
+                Inventory.hullShield += 2
+                print("+2 Shield!")
                 sleep(6)
                 clear()
-            elif upgradeType == 2:
+            elif upgradeType == 2: # hull reinforcement module
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to")
+                print("repair and reinforce its hull.")
+                sleep(2.75)
+            else: # health regen module
+                pass
+        
+        else: # tier 3
+            if upgradeType == 1: # shield upgrade module
+                print("The probe finds a module floating in space.")
+                sleep(3.3)
+                print("Upon further analysis, the probe finds that the module can be used to upgrade its shields.")
+                sleep(2.75)
+
+                if Inventory.hullShield > 4 and Inventory.hullShield < 7:
+                    temp = Inventory.hullShield
+                    Inventory.hullShield = 7
+                    print("+", (Inventory.hullShield-temp), "Shield!")
+                elif Inventory.hullShield <=4:
+                    Inventory.hullShield += 3
+                    print("+100 Shield!")
+                else:
+                    print("Your shield is already maxed out (7 Shield), so you can't get any more.")
+                
+                sleep(6)
+                clear()
+            elif upgradeType == 2: # hull reinforcement module
                 print("The probe finds a module floating in space.")
                 sleep(3.3)
                 print("Upon further analysis, the probe finds that the module can be used to")
                 print("repair and reinforce its hull.")
                 sleep(2.75)
 
-                if Inventory.probeHealth < 1000:
-                    Inventory.probeHealth += 100
-                    print("+100 Health!")
-                elif Inventory.probeHealth > 900 and Inventory.probeHealth < 1000:
+                if Inventory.probeHealth > 900 and Inventory.probeHealth < 1000:
                     temp = Inventory.probeHealth
                     Inventory.probeHealth = 1000
-                    print("+", (temp-Inventory.probeHealth), " Health!")
+                    print("+", (Inventory.probeHealth-temp), " Health!")
+                elif Inventory.probeHealth <= 900:
+                    Inventory.probeHealth += 100
+                    print("+100 Health!")
                 elif Inventory.probeHealth == 1000:
                     print("Your health is already maxed-out (1000 HP), so you can't get any more.")
                 
                 sleep(6)
                 clear()
-            else:
+            else: # health regen module
                 print("The probe finds a module floating in space.")
                 sleep(3.3)
                 print("Upon further analysis, the probe finds that the module can be used to boost its")
