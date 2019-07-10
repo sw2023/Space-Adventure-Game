@@ -5,7 +5,7 @@ import Inventory
 
 # imports that contain the story
 from intro import display_intro, sleeper
-from partOne1 import part_one_obj_event_one, part_one_object_event_2
+from StoryOne import part_1_event_1, part_1_event_2
 
 display_intro() # pretty self-explanatory, just displays the intro found in intro.py
 
@@ -44,4 +44,4 @@ elif quitGame[0] == 25:
     pass
 
 # continuing the story
-part_one_obj_event_one()
+part_1_event_1()

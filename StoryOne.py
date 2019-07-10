@@ -4,7 +4,7 @@ from time import sleep
 import Inventory
 import RandomEvent
 
-def part_one_obj_event_one():
+def part_1_event_1():
     clear()
     sleeper()
     print("After millenia of slow travel in hibernation, the probe awakens from its sleep.")
@@ -34,7 +34,7 @@ def part_one_obj_event_one():
     sleep(12)
     clear()
 
-def part_one_object_event_2():
+def part_1_event_2():
     sleeper()
     print("The probe encounters another similar object exhibiting similar behaviours, except this time, the object seemed")
     print("to scan the probe before warping away.")
@@ -86,3 +86,10 @@ def part_one_object_event_2():
     # if user responds w/ "y", program continues
     elif continueStory[0] == 25:
         pass
+    
+    print("The probe approaches a crossroads.")
+    sleep(2)
+    print("There are three possible paths for the probe to take, but all of them are unknown.")
+    sleep(4)
+    print("The probe could also turn back and head another direction?")
+    pathSelect = input("Which path do you want to take?")
