@@ -50,3 +50,8 @@ def part_one_object_event_2():
     RandomEvent.scan_object(0)
     sleep(5)
     clear()
+
+    print("The probe comes across a completely empty part of space, devoid of everything except the probe.")
+    sleep(3)
+    print("The probe accelerates and clears the empty space.")
+    
