@@ -1,5 +1,5 @@
 # imports that don't consist of code that is used in the actual story
-from clearConsole import clear
+from ClearConsole import clear
 from time import sleep
 import Inventory
 
@@ -22,18 +22,9 @@ while quitGame[0] != 14 or quitGame[0] != 25:
 
 # if the user responds with "n", the program stops
 if quitGame[0] == 14:
-    print("The probe decides it has no purpose and fries all its electronics, leaving a dead husk to drift through ")
-    print("the endless void. Perhaps another spacecraft will stumble upon its wreckage sometime in the future.")
-    sleep(4)
-    print("In addition to this, the probe's self-destruct sequence automatically starts.")
-    sleep(5)
-    print("The probe begins self-destruction.")
-    sleep(2.5)
-
-    for i in range(0, 3):
-        print("Danger! Probe health low!")
-        sleep(3)
-
+    print("The probe's self-destruct sequence automatically starts.")
+    sleep(7)
+    
     Inventory.probeHealth = 0
 
 # if user responds w/ "y", program continues
