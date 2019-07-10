@@ -1,10 +1,10 @@
 # imports that don't consist of code that is used in the actual story
 from ClearConsole import clear
-from time import sleep
+import time
 import Inventory
 
-def sleeper(): # didn't want to write `sleep(2)`
-    sleep(2)
+def sleeper(): # didn't want to write `time.sleep(2)`
+    time.sleep(2)
 
 quitGame = [ord(char) - 96 for char in input('Do you want to continue as the probe? (y/n)').lower()] # converts character input into numbers
 # credit for the above (minor modifications were made): https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python
@@ -23,8 +23,8 @@ while quitGame[0] != 14 or quitGame[0] != 25:
 # if the user responds with "n", the program stops
 if quitGame[0] == 14:
     print("The probe's self-destruct sequence automatically starts.")
-    sleep(7)
-    
+    time.sleep(7)
+
     Inventory.probeHealth = 0
 
 # if user responds w/ "y", program continues
