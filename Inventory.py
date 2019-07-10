@@ -11,7 +11,7 @@ unobtanium = 0 # unobtanium is an extremely rare metal used to upgrade, reinforc
 probeHealth = 250 # probe's health that can be added to or subtracted, if health reaches 0, game ends
 # max hp is 1000 and requires extremely good rng to get it
 hullShield = 0 # max shield is 7
-healthRegen = 10 # hp slowly regens over time
+healthRegen = 10 # hp slowly regens over time, max regen factor is 30
 
 if probeHealth == 0:
     print("The probe is too damaged and can't sustain itself any longer.")

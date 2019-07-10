@@ -344,11 +344,11 @@ def object_found():
                 print("hull regeneration.")
                 sleep(2.75)
 
-                if Inventory.healthRegen < 25:
+                if Inventory.healthRegen < 30:
                     Inventory.healthRegen += 5
                     print("+5 Regen!")
                 else:
-                    print("HP Regen is already maxed out, so you can't get any more.")
+                    print("HP Regen is already maxed out (30), so you can't get any more.")
                 
                 sleep(6)
                 clear()
