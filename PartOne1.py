@@ -48,3 +48,5 @@ def part_one_object_event_2():
     print("At the very least, it could gain some knowledge.")
     sleep(4)
     RandomEvent.scan_object(0)
+    sleep(5)
+    clear()
