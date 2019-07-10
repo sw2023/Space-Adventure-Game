@@ -6,7 +6,7 @@ nickel = 0 # nickel is a common material used to reinforce the probe
 gold = 0 # gold is a semi-common material that can be used to upgrade sections of the probe and trade to other ships
 copper = 0 # copper is a common material used to upgrade the ship and sometimes trade to other ships
 platinum = 0 # platinum is an uncommon material used to upgrade the ship and trade
-avorion = 0 # avorion is an extremely rare metal used to upgrade, reinforce, and add to the ship. Also tradable.
+unobtanium = 0 # unobtanium is an extremely rare metal used to upgrade, reinforce, and add to the ship. Also tradable.
 
 probeHealth = 250 # probe's health that can be added to or subtracted, if health reaches 0, game ends
 # max hp is 1000 and requires extremely good rng to get it

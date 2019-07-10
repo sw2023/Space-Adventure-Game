@@ -25,7 +25,7 @@ def materials_found():
 
     materialType = random.randint(1, 55)
     materialAmount = random.randint(10, 30)
-    matsGainedAvorion = random.randint(1, 5) # avorion is rare and comes in sparse quantities, so a seperate RNG variable is required
+    matsGainedUnobtanium = random.randint(1, 5) # unobtanium is rare and comes in sparse quantities, so a seperate RNG variable is required
     
     if materialType >= 1 and materialType <= 12:
         temp = Inventory.iron
@@ -44,9 +44,9 @@ def materials_found():
         Inventory.platinum += materialAmount
         print("You just got ", (Inventory.platinum - temp), " platinum!")
     elif materialType >= 43 and materialType <= 45:
-        temp = Inventory.avorion
-        Inventory.avorion += matsGainedAvorion
-        print("You just got ", (Inventory.avorion - temp), " avorion!")
+        temp = Inventory.unobtanium
+        Inventory.unobtanium += matsGainedUnobtanium
+        print("You just got ", (Inventory.unobtanium - temp), " unobtanium!")
     elif materialType >= 46 and materialType <= 55:
         temp = Inventory.nickel
         Inventory.nickel += materialAmount
@@ -63,9 +63,9 @@ def scan_object(scanObject):
     craftDamaged = random.randint(1, 50) # decides if the probe gets damaged or not
 
     asteroidSize = random.randint(1, 2) # decides whether resources can be pulled from asteroid
-    asteroidType = random.randint(1, 110) # types of asteroids in order from most common to rarest: iron, nickel, copper, gold, platinum, avorion
+    asteroidType = random.randint(1, 110) # types of asteroids in order from most common to rarest: iron, nickel, copper, gold, platinum, unobtanium
     matsGained = random.randint(10, 30) # amount of materials gained
-    avorionGained = random.randint(1, 5) # amount of avorion gained
+    unobtaniumGained = random.randint(1, 5) # amount of unobtanium gained
 
     # same code used in engine.py, only modifications are the parameters of input() and addition of nested while loops
     scanOrNot = [ord(char) - 96 for char in input('Do you want to scan? (y/n)').lower()]
@@ -186,17 +186,17 @@ def scan_object(scanObject):
 
                         break
                     elif asteroidType >= 107 and asteroidType <= 110:
-                        temp = Inventory.avorion
+                        temp = Inventory.unobtanium
                         sleeper()
-                        Inventory.avorion += avorionGained
+                        Inventory.unobtanium += unobtaniumGained
                         sleeper()
                         print("The probe has to pause for a moment to comprehend what its sensors are detecting.")
                         sleeper()
-                        print("If nothing is faulty, the probe has indeed just stumbled on avorion, the rarest material in the universe.")
+                        print("If nothing is faulty, the probe has indeed just stumbled on unobtanium, the rarest material in the universe.")
                         sleep(3)
                         print("Taking extra care to extract the material, the probe finally manages to transfer some to its storage.")
                         sleep(3)
-                        print("You got", (Inventory.avorion - temp), " avorion! Congratulations!")
+                        print("You got", (Inventory.unobtanium - temp), " unobtanium! Congratulations!")
                         sleep(6.75)
                         print("The probe decides it's finished and heads on its way.")
 
@@ -246,13 +246,13 @@ def object_found():
     copperInBundle = bundleGen1 > bundleGen2
     goldInBundle = bundleGen1 > bundleGen2
     platinumInBundle = bundleGen1 > bundleGen2
-    avorionInBundle = (bundleGen1>bundleGen2 and bundleGen1+bundleGen2>=bundleGen4 and bundleGen4<=bundleGen3) or (bundleGen5 <= bundleGen1+bundleGen2+bundleGen3+bundleGen4)
+    unobtaniumInBundle = (bundleGen1>bundleGen2 and bundleGen1+bundleGen2>=bundleGen4 and bundleGen4<=bundleGen3) or (bundleGen5 <= bundleGen1+bundleGen2+bundleGen3+bundleGen4)
 
     # variable used to prevent user from getting too many different materials in one bundle
     amountGained = 0
 
     matsGained = random.randint(10, 30) # amount of materials gained
-    avorionGained = random.randint(1, 5) # amount of avorion gained
+    unobtaniumGained = random.randint(1, 5) # amount of unobtanium gained
 
     if objectType == 1: # if object is a weapon
 
@@ -407,21 +407,21 @@ def object_found():
             elif platinumInBundle==False and amountGained>=3:
                 break
                 
-            if avorionInBundle==True:
-                temp = Inventory.avorion
+            if unobtaniumInBundle==True:
+                temp = Inventory.unobtanium
                 Inventory.platinum += matsGained
-                avorionGained += 1
+                unobtaniumGained += 1
                 sleeper()
                 print("The probe has to pause for a moment to comprehend what its sensors are detecting.")
                 sleeper()
-                print("If nothing is faulty, the probe has indeed just stumbled on avorion, the rarest material in the universe.")
+                print("If nothing is faulty, the probe has indeed just stumbled on unobtanium, the rarest material in the universe.")
                 sleep(3)
                 print("Taking extra care to extract the material, the probe finally manages to transfer some to its storage.")
                 sleep(3)
-                print("You got", (Inventory.avorion - temp), " avorion!")
+                print("You got", (Inventory.unobtanium - temp), " unobtanium!")
                 sleep(6.75)
                 print("The probe decides it's finished and heads on its way.")
-            elif avorionInBundle==False and amountGained<=3:
+            elif unobtaniumInBundle==False and amountGained<=3:
                 pass
-            elif avorionInBundle==False and amountGained>=3:
+            elif unobtaniumInBundle==False and amountGained>=3:
                 break
