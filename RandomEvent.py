@@ -72,6 +72,8 @@ def scan_object(scanObject):
 
     while scanOrNot[0] != 14 or scanOrNot != 25:
         if scanOrNot[0] == 14 or scanOrNot[0] == 25:
+            print("The probe decides not to scan and pilots itself through the endless void.")
+
             break
         
         del scanOrNot[:]
