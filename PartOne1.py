@@ -55,3 +55,34 @@ def part_one_object_event_2():
     sleep(3)
     print("The probe accelerates and clears the empty space.")
     
+    # this bit of code is to give the user a sense that they're actually doing something instead of reading text on a screen
+    # if they wanted to read text on a screen, they could just read a(n) (e)book
+    continueStory = [ord(char) - 96 for char in input('Continue? (y/n)').lower()]
+
+    while continueStory[0] != 14 or continueStory[0] != 25:
+        if continueStory[0] == 14 or continueStory[0] == 25:
+            break
+        
+        del continueStory[:] # resets continueStory array to avoid complications, as the above if statement only checks the first value of continueStory
+
+        continueStory = [ord(char) - 96 for char in input('Please enter a valid input. Continue? (y/n)').lower()]
+
+    # if the user responds with "n", the program stops
+    if continueStory[0] == 14:
+        print("The probe decides it has no purpose and fries all its electronics, leaving a dead husk to drift through ")
+        print("the endless void. Perhaps another spacecraft will stumble upon its wreckage sometime in the future.")
+        sleep(4)
+        print("In addition to this, the probe's self-destruct sequence automatically starts.")
+        sleep(5)
+        print("The probe begins self-destruction.")
+        sleep(2.5)
+
+        for i in range(0, 3):
+            print("Danger! Probe health low!")
+            sleep(3)
+
+        Inventory.probeHealth = 0
+
+    # if user responds w/ "y", program continues
+    elif continueStory[0] == 25:
+        pass
