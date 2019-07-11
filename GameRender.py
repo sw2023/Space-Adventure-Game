@@ -67,8 +67,7 @@ class GameRender(arcade.Window):
         self.draw_time = timeit.default_timer() - draw_start_time
 
 def main():
-    window = GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
-    window.setup()
+    GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE).setup()
 
     arcade.run()
 
