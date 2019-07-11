@@ -65,10 +65,13 @@ class GameRender(arcade.Window):
         arcade.draw_text(output, 20, SCREEN_HEIGHT - 40, arcade.color.WHITE, 18)
 
         self.draw_time = timeit.default_timer() - draw_start_time
+    
+    def update(self, delta_time):
+        pass
 
 def main():
-    GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE).setup()
-
+    game = GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    game.setup()
     arcade.run()
 
 if __name__ == "__main__":
