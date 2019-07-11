@@ -49,3 +49,27 @@ class MyGame(arcade.Window):
         
         shape = arcade.create_rectangles_filled_with_colors(point_list, color_list)
         self.shape_list.append(shape)
+    
+    def on_draw(self):
+        # Renders screen
+
+        arcade.start_render()
+
+        draw_start_time = timeit.default_timer()
+
+        self.shape_list.draw()
+
+        output = f"Drawing time: {self.draw_time:.3f} seconds per frame."
+        arcade.draw_text(output, 20, SCREEN_HEIGHT - 40, arcade.color.WHITE, 18)
+
+        self.draw_time = timeit.default_timer() - draw_start_time
+
+def main():
+    window = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    window.setup()
+    arcade.run()
+"""
+if __name__ == "__main__":
+    main()
+"""
+main()
