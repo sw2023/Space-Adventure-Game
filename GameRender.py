@@ -1,5 +1,7 @@
 import arcade
 import timeit
+import random
+import time
 
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
@@ -67,9 +69,8 @@ class GameRender(arcade.Window):
 def main():
     window = GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
     window.setup()
+
     arcade.run()
-"""
+
 if __name__ == "__main__":
     main()
-"""
-main()
