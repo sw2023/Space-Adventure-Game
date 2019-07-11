@@ -9,7 +9,7 @@ HALF_SQUARE_WIDTH = 2.5
 HALF_SQUARE_HEIGHT = 2.5
 SQUARE_SPACING = 10
 
-class MyGame(arcade.Window):
+class GameRender(arcade.Window):
     # Main application class
 
     def __init__(self, width, height, title):
@@ -65,7 +65,7 @@ class MyGame(arcade.Window):
         self.draw_time = timeit.default_timer() - draw_start_time
 
 def main():
-    window = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    window = GameRender(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
     window.setup()
     arcade.run()
 """
