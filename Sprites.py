@@ -59,7 +59,7 @@ class MyGame(arcade.Window):
 
         self.shape_list.draw()
 
-        output = f"Drawing time: {self.draw_time:.3f} seconds per frame."
+        output = f"Drawing time: {self.draw_time:.3f} seconds per frame." # No, not FPS, SPF (think sunscreen)
         arcade.draw_text(output, 20, SCREEN_HEIGHT - 40, arcade.color.WHITE, 18)
 
         self.draw_time = timeit.default_timer() - draw_start_time
