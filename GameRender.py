@@ -2,6 +2,7 @@ import arcade
 import timeit
 import random
 import time
+import Interface
 
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
@@ -56,15 +57,11 @@ class GameRender(arcade.Window):
         # Renders screen
 
         arcade.start_render()
-
         draw_start_time = timeit.default_timer()
-
         self.shape_list.draw()
-
-        output = f"Drawing time: {self.draw_time:.3f} seconds per frame." # No, not FPS, SPF (think sunscreen)
-        arcade.draw_text(output, 20, SCREEN_HEIGHT - 40, arcade.color.WHITE, 18)
-
         self.draw_time = timeit.default_timer() - draw_start_time
+
+        Interface.stats_display()
     
     def update(self, delta_time):
         pass

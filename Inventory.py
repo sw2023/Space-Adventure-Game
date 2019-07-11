@@ -14,10 +14,6 @@ hullShield = 0 # max shield is 7
 healthRegen = 10 # hp slowly regens over time, max regen factor is 30
 
 if hp == 0:
-    print("The probe is too damaged and can't sustain itself any longer.")
-    sleep(10)
-    clear()
-
     raise SystemExit(0)
 
 # dictionaries used to represent inventory slots
