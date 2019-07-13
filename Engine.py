@@ -1,7 +1,7 @@
-# imports that don't consist of code that is used in the actual story
 from ClearConsole import clear
 from time import sleep
 import Inventory
+import random
 
 def sleeper(): # replacement for "sleep(2)"
     sleep(2)
@@ -47,4 +47,4 @@ elif quitGame[0] == 25:
     pass
 
 while True:
-    pass
+    anti_afk = random.randint(1, 3)

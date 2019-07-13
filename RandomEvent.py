@@ -10,7 +10,7 @@ def event_selector(selectEvent):
     # randomly selects event
     # function may not be used in final game
     
-    eventHappens = random.randint(1, 3)
+    eventHappens = random.randint(1, 5)
 
     if (eventHappens == 1 and selectEvent == 0) or (selectEvent == 1):
         materials_found()
@@ -18,6 +18,10 @@ def event_selector(selectEvent):
         scan_object(0)
     elif (eventHappens == 3 and selectEvent == 0) or (selectEvent == 3):
         object_found()
+    elif (eventHappens == 4 and selectEvent == 0) or (selectEvent == 4):
+        planet_found()
+    elif (eventHappens == 4 and selectEvent == 0) or (selectEvent == 5):
+        misc_events()
 
 def materials_found():
     # function, when called, gives user a random amount of a random material
