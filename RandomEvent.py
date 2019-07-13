@@ -228,8 +228,6 @@ def object_found():
     # what type of weapon, weapon tier, etc.
     weaponType = random.randint(1, 3) # selects between 3 weapon types: lasers, railguns, and missiles
     weaponTier = random.randint(1, 54) # tiers 1-5 for weapons
-    weaponUsed = random.randint(1, 10) # decides if weapon is used
-    durability = random.randint(500, 5500) # each object will have a full durability of 5500
 
     #variables used to determine what type of upgrade the upgrade module is, what it upgrades, etc.
     upgradeTier = random.randint(1, 36) # upgrade tier selector
@@ -261,43 +259,87 @@ def object_found():
 
         if weaponTier >= 1 and weaponTier <= 19:
             if weaponType == 1:
-                pass
+                Inventory.slot1["Type"] = "Laser"
+                Inventory.slot1["Tier"] = 1
+
+                print("You just got a Tier 1 Laser!")
             elif weaponType == 2:
-                pass
+                Inventory.slot2["Type"] = "Railgun"
+                Inventory.slot2["Tier"] = 1
+
+                print("You just got a Tier 1 Railgun!")
             else:
-                pass
+                Inventory.slot2["Type"] = "Missile"
+                Inventory.slot2["Tier"] = 1
+
+                print("You just got a Tier 1 Missile!")
 
         elif weaponTier >= 20 and weaponTier <= 34:
             if weaponType == 1:
-                pass
+                Inventory.slot1["Type"] = "Laser"
+                Inventory.slot1["Tier"] = 2
+                print("You just got a Tier 2 Laser!")
             elif weaponType == 2:
-                pass
+                Inventory.slot2["Type"] = "Railgun"
+                Inventory.slot2["Tier"] = 2
+
+                print("You just got a Tier 2 Railgun!")
             else:
-                pass
+                Inventory.slot2["Type"] = "Missile"
+                Inventory.slot2["Tier"] = 2
+                
+                print("You just got a Tier 2 Missile!")
 
         elif weaponTier >= 35 and weaponTier <= 45:
             if weaponType == 1:
-                pass
+                Inventory.slot1["Type"] = "Laser"
+                Inventory.slot1["Tier"] = 3
+
+                print("You just got a Tier 3 Laser!")
             elif weaponType == 2:
-                pass
+                Inventory.slot2["Type"] = "Railgun"
+                Inventory.slot2["Tier"] = 3
+
+                print("You just got a Tier 3 Railgun!")
             else:
-                pass
+                Inventory.slot2["Type"] = "Missile"
+                Inventory.slot2["Tier"] = 3
+
+                print("You just got a Tier 3 Missile!")
 
         elif weaponTier >= 46 and weaponTier <= 51:
             if weaponType == 1:
-                pass
+                Inventory.slot1["Type"] = "Laser"
+                Inventory.slot1["Tier"] = 4
+
+                print("You just got a Tier 4 Laser!")
             elif weaponType == 2:
-                pass
+                Inventory.slot2["Type"] = "Railgun"
+                Inventory.slot2["Tier"] = 4
+
+                print("You just got a Tier 4 Railgun!")
             else:
-                pass
+                Inventory.slot2["Type"] = "Missile"
+                Inventory.slot2["Tier"] = 4
                 
+                print("You just got a Tier 4 Missile!")
+
         elif weaponTier <= 52 and weaponTier <= 54:
             if weaponType == 1:
-                pass
+                Inventory.slot1["Type"] = "Laser"
+                Inventory.slot1["Tier"] = 5
+
+                print("You just got a Tier 5 Laser!")
             elif weaponType == 2:
-                pass
+                Inventory.slot2["Type"] = "Railgun"
+                Inventory.slot2["Tier"] = 5
+
+                print("You just got a Tier 5 Railgun!")
             else:
-                pass
+                Inventory.slot2["Type"] = "Missile"
+                Inventory.slot2["Tier"] = 5
+
+                print("You just got a Tier 4 Missile!")
 
     elif objectType == 2: # if object is an upgrade
 

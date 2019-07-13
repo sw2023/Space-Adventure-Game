@@ -20,25 +20,20 @@ if hp == 0:
 slot1 = {
     "Type": "null", 
     "Tier": 0, 
-    "Durability": 0
 }
 slot2 = {
     "Type": "null", 
     "Tier": 0, 
-    "Durability": 0
 }
 slot3 = {
     "Type": "null", 
     "Tier": 0, 
-    "Durability": 0
 }
 slot4 = {
     "Type": "null", 
     "Tier": 0, 
-    "Durability": 0
 }
 slot5 = {
     "Type": "null", 
     "Tier": 0, 
-    "Durability": 0
 }
