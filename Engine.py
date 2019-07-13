@@ -2,6 +2,7 @@ from ClearConsole import clear
 from time import sleep
 import Inventory
 import random
+import RandomEvent
 
 def sleeper(): # replacement for "sleep(2)"
     sleep(2)
@@ -48,3 +49,16 @@ elif quitGame[0] == 25:
 
 while True:
     anti_afk = random.randint(1, 3)
+
+    RandomEvent.event_selector(0)
+
+    if anti_afk == 1:
+        user_prompt = [ord(char) - 96 for char in input('Do you want to continue as the probe? (y/n)').lower()]
+
+        while user_prompt[0] != 14 or user_prompt[0] != 25:
+            if user_prompt[0] == 14 or user_prompt[0] == 25:
+                break
+
+            del user_prompt[:]
+
+            user_prompt = [ord(char) - 96 for char in input('Please enter a valid input. Do you want to continue as the probe? (y/n)').lower()]
