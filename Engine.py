@@ -10,7 +10,7 @@ print("You are a probe stranded in the depths of space.")
 sleep(3)
 print("Once, you were held safely in Earth's orbit.")
 sleep(4)
-print("However, yu were knocked out of orbit by a stray piece of space junk and sent spiralling into the void.")
+print("However, you were knocked out of orbit by a stray piece of space junk and sent spiralling into the void.")
 sleep(6.75)
 print("Miraculously, none of your vital systems were damaged, and you still retain the ability to collect")
 print("the plethora of valuable materials that can be found in space.")
@@ -39,7 +39,8 @@ if quitGame[0] == 14:
     print("The probe's self-destruct sequence automatically starts.")
     sleep(6.5)
 
-    Inventory.probeHealth = 0
+    Inventory.hp = 0
+    raise SystemExit(0)
 
 # if user responds w/ "y", program continues
 elif quitGame[0] == 25:

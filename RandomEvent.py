@@ -610,3 +610,6 @@ def planet_found():
     
     elif planet_type == 2:
         pass
+
+def misc_events():
+    event_type = random.randint(1, 2)
