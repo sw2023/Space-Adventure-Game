@@ -580,3 +580,33 @@ def object_found():
                 pass
             elif unobtaniumInBundle==False and amountGained>=3:
                 break
+
+def planet_found():
+    planet_type = random.randint(1, 3)
+    contains_resource = random.randint(1, 2) # does the planet have resources?
+    planet_resource = random.randint(1, 6)
+
+    if planet_type == 1:
+        print("The probe discovers a small rocky planet without an atmosphere.")
+        sleep(3)
+
+        if contains_resource == 1: # planet has stuff
+
+            if planet_resource == 1:
+                Inventory.iron += 10
+            elif planet_resource == 2:
+                Inventory.nickel += 10
+            elif planet_resource == 3:
+                Inventory.gold += 7
+            elif planet_resource == 4:
+                Inventory.copper += 7
+            elif planet_resource == 5:
+                Inventory.platinum += 5
+            else:
+                Inventory.unobtanium += 1
+
+        elif contains_resource == 2: # no cool stuff on planet
+            pass
+    
+    elif planet_type == 2:
+        pass

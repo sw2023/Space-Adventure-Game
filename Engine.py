@@ -1,10 +1,22 @@
 # imports that don't consist of code that is used in the actual story
 from ClearConsole import clear
-import time
+from time import sleep
 import Inventory
 
-def sleeper(): # didn't want to write `time.sleep(2)`
-    time.sleep(2)
+def sleeper(): # replacement for "sleep(2)"
+    sleep(2)
+
+print("You are a probe stranded in the depths of space.")
+sleep(3)
+print("Once, you were held safely in Earth's orbit.")
+sleep(4)
+print("However, yu were knocked out of orbit by a stray piece of space junk and sent spiralling into the void.")
+sleep(6.75)
+print("Miraculously, none of your vital systems were damaged, and you still retain the ability to collect")
+print("the plethora of valuable materials that can be found in space.")
+sleep(10)
+print("You decide that it is your mission to venture around the universe and be a hoarder.")
+sleep(5)
 
 quitGame = [ord(char) - 96 for char in input('Do you want to continue as the probe? (y/n)').lower()] # converts character input into numbers
 # credit for the above (minor modifications were made): https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python
@@ -18,15 +30,20 @@ while quitGame[0] != 14 or quitGame[0] != 25:
     
     del quitGame[:] # resets quitGame array to avoid complications, as the above if statement only checks the first value of quitGame
 
-    quitGame = [ord(char) - 96 for char in input('Do you want to continue as the probe? (y/n)').lower()]
+    quitGame = [ord(char) - 96 for char in input('Please enter a valid input. Do you want to continue as the probe? (y/n)').lower()]
 
 # if the user responds with "n", the program stops
 if quitGame[0] == 14:
+    print("The probe decides that there is no point in existing anymore.")
+    sleep(5)
     print("The probe's self-destruct sequence automatically starts.")
-    time.sleep(7)
+    sleep(6.5)
 
     Inventory.probeHealth = 0
 
 # if user responds w/ "y", program continues
 elif quitGame[0] == 25:
+    pass
+
+while True:
     pass
