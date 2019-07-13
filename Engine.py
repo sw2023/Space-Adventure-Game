@@ -39,6 +39,7 @@ if quitGame[0] == 14:
     sleep(5)
     print("The probe's self-destruct sequence automatically starts.")
     sleep(6.5)
+    clear()
 
     Inventory.hp = 0
     raise SystemExit(0)
