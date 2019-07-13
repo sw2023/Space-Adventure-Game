@@ -612,4 +612,30 @@ def planet_found():
         pass
 
 def misc_events():
-    event_type = random.randint(1, 2)
+    event_type = random.randint(1, 3)
+
+    if event_type == 1:
+        print("The probe stumbles upon a black hole.")
+        sleep(3.5)
+        print("This is the first time any human-made probe has gotten this close to a black hole.")
+        sleep(5.5)
+        print("The probe rapidly takes measurements with its instruments and stores the measurements ")
+        print("in its databases.")
+        sleep(7)
+        print("However, the probe can't get too close, as it might get caught in the black hole's immense")
+        print("gravitational pull and destroyed.")
+        sleep(8)
+        print("The probe turns away and speeds into the void.")
+        sleep(6)
+        clear()
+    elif event_type == 2:
+        print("The probe comes across an empty void.")
+        sleep(4)
+        print("There is an overwhelming sense of loneliness eminating from the region.")
+        sleep(5)
+        print("Although there is nothing around for many, many light-years, the probe still feels unsettled")
+        print("with the little emotional capacity it has.")
+        sleep(10)
+        print("The probe speeds through the void.")
+        sleep(5)
+        clear()
